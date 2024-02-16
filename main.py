@@ -28,15 +28,15 @@ def downstatus(statusfile,message):
 		if os.path.exists(statusfile):
 			break
 
-	time.sleep(3)      
+	time.sleep(1)      
 	while os.path.exists(statusfile):
 		with open(statusfile,"r") as downread:
 			txt = downread.read()
 		try:
 			bot.edit_message_text(message.chat.id, message.id, f"__Downloaded__ : **{txt}**")
-			time.sleep(10)
+			time.sleep(1)
 		except:
-			time.sleep(5)
+			time.sleep(2)
 
 
 # upload status
@@ -45,15 +45,15 @@ def upstatus(statusfile,message):
 		if os.path.exists(statusfile):
 			break
 
-	time.sleep(3)      
+	time.sleep(1)      
 	while os.path.exists(statusfile):
 		with open(statusfile,"r") as upread:
 			txt = upread.read()
 		try:
 			bot.edit_message_text(message.chat.id, message.id, f"__Uploaded__ : **{txt}**")
-			time.sleep(10)
+			time.sleep(1)
 		except:
-			time.sleep(5)
+			time.sleep(2)
 
 
 # progress writter
